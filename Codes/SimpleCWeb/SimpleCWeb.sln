@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCWeb", "SimpleCWeb\SimpleCWeb.csproj", "{D2F4B00D-DBFB-4EDF-813D-58FE79EABD97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2F4B00D-DBFB-4EDF-813D-58FE79EABD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F4B00D-DBFB-4EDF-813D-58FE79EABD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F4B00D-DBFB-4EDF-813D-58FE79EABD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F4B00D-DBFB-4EDF-813D-58FE79EABD97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {619D49A9-AF60-494F-B811-62EA772FCF37}
+	EndGlobalSection
+EndGlobal
