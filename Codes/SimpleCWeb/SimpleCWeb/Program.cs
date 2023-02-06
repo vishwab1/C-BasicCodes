@@ -1,14 +1,17 @@
 using SimpleCWeb.DatabaseConfig;
 using Microsoft.EntityFrameworkCore;
+using SimpleCWeb.Models;
+using SimpleCWeb.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
 
+builder.Services.AddScoped<UserServicecs>();
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
+//builder.Configuration.GetConnectionString("DefaultConnection")
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

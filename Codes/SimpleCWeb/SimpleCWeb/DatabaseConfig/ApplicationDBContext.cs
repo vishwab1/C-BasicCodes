@@ -10,6 +10,6 @@ namespace SimpleCWeb.DatabaseConfig
         {
         }
 
-        public DbSet<User> Categories { get; set; }
+        public DbSet<User> UserDetails { get; set; }
     }
 }

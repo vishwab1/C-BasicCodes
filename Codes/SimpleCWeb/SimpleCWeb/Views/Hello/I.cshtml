@@ -1,10 +1,26 @@
-﻿@model User
+﻿
+@model IEnumerable<SimpleCWeb.Models.User>
 @{
     
     ViewData["Title"] = "Hello";
 }
 <h1>@ViewData["Title"]</h1>
-<div class="text-center">
-    
 
-</div>
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.rollno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+
+    </tr>
+}
+
+</table>
+
