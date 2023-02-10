@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using SimpleCWeb.Models;
 using SimpleCWeb.Services;
+using System.Configuration;
 using System.Text.Encodings.Web;
 
 namespace SimpleCWeb.Controllers
@@ -14,6 +17,7 @@ namespace SimpleCWeb.Controllers
         {
             _userServicecs = userServicecs;
         }
+        
         //passing value to controller
         /*static IList<User> UserList = new List<User>{
                 new User() { rollno = 1, name = "John" } ,
@@ -21,10 +25,13 @@ namespace SimpleCWeb.Controllers
           
             };*/
         public IActionResult I(string name, int numTimes)
-        {  
+        {
+            List<User> Users = new List<User>();
+            //string constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            //MySqlConnection mySqlConnection= new MySqlConnection(constr);   
 
             //passing value to controller
-            Console.WriteLine(name);
+            //Console.WriteLine(mySqlConnection);
             /* if(true)
              {
                  return RedirectToAction("In.cs");
@@ -36,7 +43,7 @@ namespace SimpleCWeb.Controllers
             //return HtmlEncoder.Default.Encode($"Hello {name}, ID: {numTimes}");
             //return View(use)
 
-            
+            //_userServicecs.GetAll()
             return View(_userServicecs.GetAll()); }
 
 

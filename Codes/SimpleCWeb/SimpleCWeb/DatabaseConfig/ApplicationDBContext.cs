@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SimpleCWeb.Models;
 
-namespace SimpleCWeb.DatabaseConfig
+/*namespace SimpleCWeb.DatabaseConfig
 {
-    public class ApplicationDBContext : DbContext
+    public class ApplicationDBContext 
 
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
@@ -12,4 +12,4 @@ namespace SimpleCWeb.DatabaseConfig
 
         public DbSet<User> UserDetails { get; set; }
     }
-}
+}*/

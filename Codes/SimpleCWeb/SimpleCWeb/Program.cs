@@ -1,17 +1,27 @@
-using SimpleCWeb.DatabaseConfig;
+﻿
 using Microsoft.EntityFrameworkCore;
 using SimpleCWeb.Models;
 using SimpleCWeb.Services;
+using Microsoft.Extensions.DependencyInjection;
+using SimpleCWeb.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<MvcMovieContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext") ?? throw new InvalidOperationException("Connection string 'MvcMovieContext' not found.")));
+
+
+
 builder.Services.AddScoped<UserServicecs>();
-builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
-//builder.Configuration.GetConnectionString("DefaultConnection")
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +41,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Hello}/{action=I}/");
+    pattern: "{controller=Movies}/{action=Index}/");
 
 app.Run();
